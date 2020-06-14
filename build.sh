@@ -6,9 +6,11 @@ echo 'export PS1="\n\u@cu.heroku:\W$ "' >/etc/profile.d/default.sh;
 #     https://devcenter.heroku.com/articles/exec#using-with-docker
 
 #These should already be in base image (base, not original)
-#sudo apt update -y;
-#sudo apt install curl -y;
-#sudo apt install openssh-server -y;
+#BUT THEY MUST BE HERE TOO FOR DEPLOYMENT,
+#CAN'T GET WHY PRE-INSTALLING IN BASE IMAGE NOT WORKING
+sudo apt update -y;
+sudo apt install curl -y;
+sudo apt install openssh-server -y;
 
 #Heroku exec
 mkdir -p /app/.profile.d
